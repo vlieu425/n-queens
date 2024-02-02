@@ -203,17 +203,34 @@
 
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
+      // // declare n to this.get('n')
+      // var n = this.get('n');
+      // // iterate through every row
+      // for (var i = 0; i < n; i++) {
+      //   // iterate through every column index
+      //   for (var j = 0; j < n; j++) {
+      //     // if this.hasMajorConflictAt(j - i)
+      //     if (this.hasMajorDiagonalConflictAt(j - i)) {
+      //       // return true
+      //       return true;
+      //     }
+      //   }
+      // }
+      // return false; // fixme
+      // }
+
+
+
+
       // declare n to this.get('n')
       var n = this.get('n');
       // iterate through every row
       for (var i = 0; i < n; i++) {
-        // iterate through every column index
-        for (var j = 0; j < n; j++) {
-          // if this.hasMajorConflictAt(j - i)
-          if (this.hasMajorDiagonalConflictAt(j - i)) {
-            // return true
-            return true;
-          }
+
+        // if this.hasMajorConflictAt(j - i)
+        if (this.hasMajorDiagonalConflictAt(i) || this.hasMajorDiagonalConflictAt(-i)) {
+          // return true
+          return true;
         }
       }
       return false; // fixme
@@ -254,19 +271,35 @@
 
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function() {
+      // //declare n = this.get('n')
+      // var n = this.get('n');
+
+      // //iterate
+      // for (var i = 0; i < n; i++) {
+      //   //iterate
+      //   for (var j = 0; j < n; j++) {
+      //     //if this.hasMinor...At(i - j)
+      //     // console.log('i + j', j + i);
+      //     if (this.hasMinorDiagonalConflictAt(j + i)) {
+      //       //return true
+      //       return true;
+      //     }
+      //   }
+      // }
+
+      // return false; // fixme
+
       //declare n = this.get('n')
       var n = this.get('n');
 
       //iterate
       for (var i = 0; i < n; i++) {
-        //iterate
-        for (var j = 0; j < n; j++) {
-          //if this.hasMinor...At(i - j)
-          // console.log('i + j', j + i);
-          if (this.hasMinorDiagonalConflictAt(j + i)) {
-            //return true
-            return true;
-          }
+
+        //if this.hasMinor...At(i - j)
+        // console.log('i + j', j + i);
+        if (this.hasMinorDiagonalConflictAt(i) || this.hasMinorDiagonalConflictAt(i + n)) {
+          //return true
+          return true;
         }
       }
 
